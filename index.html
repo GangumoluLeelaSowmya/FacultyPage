@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty List</title>
+    <style>
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin-left: 15%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #181818;
+            padding: 8px;
+        }
+        th {
+            background-color: #c4e0f3;
+            text-align: center;
+        }
+        tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(even) {
+            background-color: #e0f7fa;
+        }
+        tr:hover {
+            background-color: #e1f3e1;
+        }
+        button {
+            padding: 6px 12px;
+            color: rgb(17, 12, 12);
+            border: 1px solid #a6a5a5; /* Corrected the border property */
+            cursor: pointer;
+            width: 120px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        td.serial-number, td.button-cell ,td.id{
+            text-align: center; /* Center the button in the cell */
+        }
+        td.id{
+            width: 200px;
+        }
+        button:hover {
+            background-color:  #c4e0f3;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            padding: 8px;
+            width: 300px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-left: 70%;
+        }
+    </style>
+        <script>
+            function filterTable() {
+                var input, filter, table, tbody, tr, td, i, txtValue;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                table = document.querySelector("table");
+                tbody = table.querySelector("tbody");
+                tr = tbody.getElementsByTagName("tr");
+    
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[2]; 
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+    
+            fetch('https://script.google.com/macros/s/AKfycbzxpkkESpEbI42t1hcsNSO6f4-VtILOZG6bqlOrtxEU2kWjAohgzux4sVdLg93UGcah/exec')
+                .then(res => res.json())
+                .then(data => {
+                    const headers = data.content[0];
+                    const facultyNameIndex = headers.indexOf("Faculty Name");
+                    const faculty_id = headers.indexOf("Pf");
+    
+                    if (facultyNameIndex === -1) {
+                        throw new Error('Column "Faculty Name" not found');
+                    }
+    
+                    let rows = '';
+                    for (let i = 1; i < data.content.length; i++) {
+                        const facultyName = data.content[i][facultyNameIndex];
+                        const facultyId = data.content[i][faculty_id];
+                        rows += `
+                            <tr>
+                                <td class="serial-number">${i}</td>
+                                <td class="id">${facultyId}</td>  
+                                <td>${facultyName}</td>
+                                <td class="button-cell"><button onclick="location.href='details1.html?name=${encodeURIComponent(facultyName)}'">View Profile</button></td>
+                            </tr>
+                        `;
+                    }
+    
+                    document.getElementById("facultyTableBody").innerHTML = rows;
+                })
+                .catch(error => console.error('Error:', error));
+        </script>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for faculty names...">
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Id's</th>
+                <th>Faculty List</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="facultyTableBody"></tbody>
+    </table>
+</body>
+</html>

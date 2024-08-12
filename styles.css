@@ -1,0 +1,588 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: url('images/net.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+}
+.similar-experts-list {
+    margin-top: 10px;
+}
+
+.experts-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Adds a gap between rows */
+}
+
+.experts-table td {
+    padding: 5px 15px;
+    /* background-color: #f9f9f9; */
+    /* border: 1px solid #ddd; */
+}
+.experts-table td:hover {
+    padding: 8px 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+.experts-table a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* .experts-table a:hover {
+    text-decoration: underline;
+    background-color: #ccc;
+} */
+
+.bulb-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.logo {
+    width: 50px; /* Adjust width as needed */
+    height: auto;
+    margin-right: 10px; /* Space between image and text */
+}
+
+.title-text {
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+nav {
+    margin-top: 20px; /* Adjust margin to move nav down */
+}
+.academic-item {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    margin-bottom: 12px;
+}
+.mail {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    margin-bottom: 12px;
+}
+
+.academic-item .text-info {
+    margin-left: 40px;
+    text-align: left;
+}
+.mail.text-info {
+    margin-left: 40px;
+    text-align: left;
+    
+}
+
+.academic-item img {
+    width: 35px;
+    height: 35px;
+    margin-left: 8px;
+}
+.mail img {
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+}
+
+.academic-item p {
+    /* margin: 0; */
+    /* margin-right: 8px; */
+    font-size: 10px;
+}
+.mail p {
+    /* margin: 0; */
+    /* margin-right: 8px; */
+    font-size: 10px;
+}
+
+.academic-item a p {
+    color: #007BFF;
+    text-decoration: none;
+}
+.mail a p {
+    color: #007BFF;
+    text-decoration: none;
+    
+}
+
+.academic-item a p:hover {
+    text-decoration: underline;
+}
+.mail a p:hover {
+    text-decoration: underline;
+}
+
+
+
+#view-more {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+#view-more:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+nav li {
+    margin: 0 10px;
+    position: relative; /* Needed for dropdown positioning */
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+.search-icon {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.profile-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.profile-sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.profile-menu a:hover {
+    background-color: #ddd;
+}
+
+.academic-info {
+    margin-top: 20px;
+}
+
+.academic-info .text-info{
+    margin-left: 5px;
+    /* text-align: left; */
+}
+
+
+.profile-main {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    /* width: 30%; */
+}
+
+.profile-header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.vidwan-box {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.stats-box {
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.stat {
+    text-align: center;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    flex: 1;
+    border-right: 2px solid white; /* Creates the white border between each stat */
+}
+
+.stat:last-child {
+    border-right: none; /* Removes the border for the last stat */
+}
+
+.profile-details {
+    margin-top: 20px; /* Add space between boxes and details */
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.publications,
+.citations,
+.google-scholar {
+    margin-bottom: 20px;
+}
+.lef {
+    margin-left: 10%; /* Example margin for positioning */
+    width: 60%;
+    border-collapse: collapse;
+}
+
+.lef th, .lef td {
+    border-right: 2px solid #252222; /* Vertical border between columns */
+    padding: 8px;
+    text-align: center;
+    margin: 0; /* Remove any default margin */
+    line-height: 1; /* Ensure minimal line-height */
+}
+
+/* Remove vertical border for the last column */
+.lef th:last-child, .lef td:last-child {
+    border-right: none;
+}
+
+.lef th {
+    /* background-color: #f2f2f2; */
+    font-weight: bold;
+}
+
+.left_mar_num {
+    padding-right: 20px; /* Adjust padding to create space */
+    text-align: center; /* Center-align text */
+}
+
+.left_mar {
+    padding-left: 20px;
+    padding-right: 30px;
+    font-size: 160%;
+}
+
+/* .google-scholar th.left_mar1  {
+    padding-left: 50px;
+}
+
+.google-scholar td.left_mar  {
+    padding-left: 20px;
+    text-align: center;
+} */
+
+.similar-experts {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+button.edit-profile-button,
+button.publications-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+button.edit-profile-button:hover,
+button.publications-button:hover {
+    background-color: #2980b9;
+}
+
+button.publications-button {
+    align-self: flex-end;
+}
+.similar-experts-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    max-width: 1000px; /* Adjust according to your design */
+    margin: 0 auto;
+}
+.similar-experts-list  {
+    width: 20%;
+    /* margin-top: 10%; */
+}
+
+.similar-experts-list table tr td {
+    width: 100%;
+    margin-top: 10%;
+}
+.similar-experts-list tbody{
+    width: 100%;
+    margin-top: 10%;
+}
+
+.similar-experts-list #more-experts {
+    display: none;
+    width: 100%;
+}
+
+.similar-experts-list #view-more {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+.similar-experts-list a:hover {
+    text-decoration: underline;
+}
+.bulb-icon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between the bulb and the heading text */
+    vertical-align: middle; /* Align icon vertically in the middle of the text */
+}
+.similar-experts-list img.expert-img {
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+    margin-right: 10px; /* Space between image and text */
+    border-radius: 50%; /* Optional: make the images round */
+}
+.similar-experts-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.similar-experts-list li {
+    margin-bottom: 10px;
+}
+
+.similar-experts-list a {
+    text-decoration: none;
+    color: #000;
+}
+
+.similar-experts-list a:hover {
+    text-decoration: underline;
+}
+
+.academic-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between items */
+}
+
+
+.academic-item img.academic-icon {
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    margin-right: 10px; /* Space between image and text */
+}
+
+
+.academic-item p {
+    margin: 0;
+    margin-right: 10px; /* Space between paragraph and link */
+}
+
+.academic-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.academic-item a:hover {
+    text-decoration: underline;
+}
+
+.publications {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px;
+    padding-top: 0; /* Adjust as needed to move the section up */
+}
+
+.publications img {
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    margin-right: 10px; /* Space between image and heading */
+}   
+
+.publications h3 {
+    margin: 0; /* Remove any default margin */
+}
+.publications {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: -10px; /* Adjust this value to move the section up */
+}
+
+
+.citation-images img {
+    width: 40px; /* Decreased width for smaller size */
+    margin-left: 20%;
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ccc; /* Optional: add a border to the images */
+    border-radius: 5px; /* Optional: add rounded corners */
+}
+.profile-details {
+    margin-top: 20px; /* Add space between boxes and details */
+    border: 1px solid #ccc; /* Adds a thin grey border */
+    padding: 10px; /* Adds padding inside the box */
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.home:hover{
+    background-color: #a9cbf0;
+    border: 1px solid #ccc; /* Adds a thin grey border */
+    padding: 3px; /* Adds padding inside the box */
+    border-radius: 5px;
+}
+.articles-box{
+    margin-left: 10%;
+}
+.scrollable-table-container {
+    max-height: 400px; /* Adjust this height as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+.experts-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.experts-table th,
+.experts-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.experts-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.similar-experts-list
+{
+margin-top: 50px;
+}
+.footer1 {
+    background-color: #333; /* Dark background color */
+    color: white; /* Text color */
+    text-align: center; /* Center text alignment */
+    padding: 30px 0; /* Padding for top and bottom */
+    /* position: fixed; Fixed position at the bottom */
+    /* bottom: 0; Align at the bottom */
+    width: 100%; /* Full width */
+  }
+  
+  .footer1 p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size */
+  }
+  
+  .footer1 a {
+    color: #4CAF50; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer1 a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+ #mailLink
+ {
+    font-size: 15px;
+ }
+  
